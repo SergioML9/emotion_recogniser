@@ -43,7 +43,7 @@ Create the file ```~/.keras/keras.json``` with the following content:
 ### Clone the repository
 
 ```
-git clone https://github.com/SergioML9/emotion_recogniser
+git clone https://github.com/SergioML9/emotion_recogniser.git
 ```
 
 ## Usage
