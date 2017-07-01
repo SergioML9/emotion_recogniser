@@ -22,6 +22,9 @@ conda install -c menpo opencv3=3.1.0
 pip install --upgrade keras
 conda install pandas
 conda install h5py
+pip install SpeechRecognition
+apt-get install portaudio19-dev
+pip install pyaudio
 ```
 
 ### Configure Keras
@@ -45,7 +48,7 @@ git clone https://github.com/SergioML9/emotion_recogniser
 
 ## Usage
 
-### Emotion detection from face recognition
+### Emotion detection from face analysis
 
 #### Bash option
 
@@ -62,3 +65,8 @@ Run `face_analyser/gui.py` script, and a very simple GUI will be shown. The GUI 
 4. Get data from dataset: converts the data from the csv dataset to npy files.
 5. Exit: closes the application.
 
+### Emotion detection from speech analysis
+
+# Bash option
+
+Run `speech_analyser/run.py` script, and the emotion detection process will start, showing the output in the terminal.
