@@ -67,6 +67,6 @@ Run `face_analyser/gui.py` script, and a very simple GUI will be shown. The GUI 
 
 ### Emotion detection from speech analysis
 
-# Bash option
+#### Bash option
 
 Run `speech_analyser/run.py` script, and the emotion detection process will start, showing the output in the terminal.
