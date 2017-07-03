@@ -29,14 +29,18 @@ def main():
 
         # Check if face has been detected
         if face_coordinates is not None:
-            # Draw face rectangle
-            video_receiver.drawFace(frame, face_coordinates)
 
             # Preprocess image
             preprocessed_frame = face_detector.preprocess(frame_gray, face_coordinates)
 
-            emotion_index = model.detectEmotion(preprocessed_frame)
-            print (settings.detected_emotions[emotion_index])
+            emotion_prob, emotion_index = model.detectEmotion(preprocessed_frame)
+            #print ("The worker is " + settings.detected_emotions[emotion_index])
+            print("ex:EmotionDetected rdf:type ewe-emodet:EmotionDetected. \
+                    \n ex:EmotionDetected ewe-emodet:hasDetected onyx:Emotion. \
+                    \n onyx:Emotion onyx:hasEmotionCategory wn-affect:" + settings.detected_emotions[emotion_index] + " . \
+                    \n onyx:Emotion onyx:hasEmotionIntensity " + str(emotion_prob) + ".\n\n")
+            # Draw face rectangle
+            video_receiver.drawFace(frame, face_coordinates, settings.detected_emotions[emotion_index])
 
     # When everything done, release the capture
     capture.release()

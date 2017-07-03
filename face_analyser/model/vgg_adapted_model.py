@@ -51,7 +51,7 @@ class FaceAnalyserModel():
 
     def detectEmotion(self, frame):
         result = self.model.predict(frame)[0]
-        return np.argmax(result)
+        return max(result), np.argmax(result)
 
     def trainModel(self):
 
